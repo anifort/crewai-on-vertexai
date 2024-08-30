@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "crewai_gcp"
+version = "0.1.0"
+description = "crewai-gcp using crewAI"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+langchain-core = "^0.2.24"
+langchain-google-vertexai = "^1.0.7"
+traceloop-sdk = "^0.26.1"
+opentelemetry-exporter-gcp-trace = "^1.6.0"
+opentelemetry-exporter-gcp-monitoring = "^1.6.0a0"
+google-cloud-aiplatform = {extras = ["reasoningengine"], version = "^1.60.0"}
+ipykernel = "^6.29.5"
+crewai = {extras = ["tools"], version = "^0.51.1"}
+
+[tool.poetry.scripts]
+crewai_gcp = "crewai_gcp.main:run"
+train = "crewai_gcp.main:train"
+replay = "crewai_gcp.main:replay"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
